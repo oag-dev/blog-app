@@ -1,4 +1,4 @@
-package uz.blog.blogapp.entity.post;
+package uz.blog.blogapp.entity.product;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,16 +19,13 @@ import java.util.UUID;
 @Data
 @PackagePrivate
 @Entity
-@Table(name = "post")
 @EntityListeners(AuditingEntityListener.class)
-public class PostEntity {
+public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     String name;
-
-    String text;
 
     @CreatedBy
     UUID createdBy;
