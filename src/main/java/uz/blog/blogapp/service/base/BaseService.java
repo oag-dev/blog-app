@@ -7,7 +7,7 @@ import uz.blog.blogapp.model.response.ApiResponse;
 import java.util.Optional;
 
 //Bu interface Hamma entity uchun hizmat qiluvchi service <Kiruvchi, Chiquvchi> bunda 1 chi Http body da kelga Object, Http body da ketadigan Object
-public interface BaseServiceInterface<Kiruvchi, Chiquvchi> {
+public interface BaseService<Kiruvchi, Chiquvchi> {
 
     //Create Entity
     ApiResponse addEntity(Kiruvchi kiruvchi);

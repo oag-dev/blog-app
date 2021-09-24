@@ -1,34 +1,29 @@
-package uz.blog.blogapp.entity.role;
+package uz.blog.blogapp.entity.privilege;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.PackagePrivate;
 import org.springframework.security.core.GrantedAuthority;
-import uz.blog.blogapp.entity.enums.role.RoleName;
-import uz.blog.blogapp.entity.privilege.PrivilegeEntity;
+import uz.blog.blogapp.entity.enums.privilege.PrivilegeName;
 
 import javax.persistence.*;
-import java.util.Set;
 
+@Entity(name = "privilege")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @PackagePrivate
-@Entity(name = "role")
-public class RoleEntity implements GrantedAuthority {
+@Data
+public class PrivilegeEntity implements GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
     @Column(unique = true)
     @Enumerated(EnumType.STRING)
-    RoleName name;
-
-    @ManyToMany
-    Set<PrivilegeEntity> privilegeEntities;
+    PrivilegeName name;
 
     @Override
     public String getAuthority() {
-        return this.name.name();
+        return name.name();
     }
 }

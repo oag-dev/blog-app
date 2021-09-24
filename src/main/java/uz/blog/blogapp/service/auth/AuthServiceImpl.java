@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import uz.blog.blogapp.entity.enums.RoleName;
+import uz.blog.blogapp.entity.enums.role.RoleName;
 import uz.blog.blogapp.entity.user.UserEntity;
 import uz.blog.blogapp.model.dto.login.LoginDto;
 import uz.blog.blogapp.model.dto.register.RegisterDto;
